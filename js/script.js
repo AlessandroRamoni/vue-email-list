@@ -16,6 +16,15 @@ const app = new Vue({
           console.log(response.data);
           this.raccolta.push(singoloIndirizzo.response);
         });
+      for (let i = 0; i < 10; i++) {
+        axios
+          .get("https://flynn.boolean.careers/exercises/api/random/phone")
+          .then((response) => {
+            const numeroTelefono = response.data;
+            console.log(response.data);
+            this.rubrica.push(numeroTelefono.response);
+          });
+      }
     }
   },
 
@@ -23,15 +32,7 @@ const app = new Vue({
 
   /*
   mounted() {
-    for (i = 0; i < 10; i++) {
-      axios
-        .get("https://flynn.boolean.careers/exercises/api/random/phone")
-        .then((response) => {
-          const numeroTelefono = response.data;
-          console.log(response.data);
-          this.rubrica.push(numeroTelefono.response);
-        });
-    }
+   
   },
 */
 });
